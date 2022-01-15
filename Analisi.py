@@ -6,17 +6,21 @@ import json
 import os
 import shutil
 
+#TRACCIA = Script che permette dato un file txt che contiene tutti URL di progetti, crea tanti file JSON
+#quanti URL ci sono (non prendendo in considerazione URL che danno ERROR 404)
+
 #Leggo file
-array_project = open("test.txt").read().splitlines()
+array_project = []
+try:
+    array_project = open("test.txt").read().splitlines()
+except:
+    print("File non esistente")
 
-
-
-############CREARE CARTELLA CHE SE ESISTE GIA' LA SOVRASCRIVO############
+#Creo cartella per salvare i file JSON
 name_folder = "JSON_file"
 if os.path.exists(name_folder):
     shutil.rmtree(name_folder)
 os.makedirs(name_folder)
-#######################################
 
 #cambio cartella di riferimento con quella appeana creata
 #cambio cartella cosi i file vengono salvati direttamente li senza che sia necessario fare un move
@@ -36,6 +40,8 @@ for progetto in array_project:
 
     x  = str(progetto)
     nome_progetto = x.split("/")[-1]
+    #Controllo che i link presenti nel file TXT siano funzionanti, se non lo sono stampo a console che il sito
+    #fornisce un error 404
     stato_url = requests.get(x)
     if(stato_url.status_code == 404):
         print("STATUS CODE 404")
@@ -85,10 +91,7 @@ for progetto in array_project:
         dizionario['number_of_author_readme'] = len(list(dict.fromkeys(array_autori_readme)))
         dizionario['manifest_commits'] = array_commit
 
-        # print("NUMERO COMMIT", index)
-
         #creo file JSON
-        # print(txt2.split("/")[-1] + ".json") --> prendo ultimo 
         nome_progetto_json = nome_progetto + ".json"
         diz_to_json = json.dumps(dizionario, indent = 4)
 
@@ -96,6 +99,11 @@ for progetto in array_project:
             file.write(diz_to_json) 
             file.close()
         
-        print("Close")
+        #Controllo che esista per dare un messaggio di verifica
+        # if os.path.exists(nome_progetto_json):
+        #     print("File creato con successo")
+        # else:
+        #     print("File NON creato con successo")
+        
 
 

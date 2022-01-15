@@ -1,0 +1,9 @@
+https://github.com/peterlazar1993/nodejs-jwt-authentication-sample
+https://github.com/JArtschwager/JSJSwimSignUps
+https://github.com/KyleAMathews/react-gravatar
+https://github.com/aberndsen/dc.js
+https://github.com/tolokoban/cameroun-server
+https://github.com/renanmorais/angular-cli
+https://github.com/sunshineltt/viewer
+https://github.com/manfredsteyer/angular-aot-with-lazy-loading
+https://github.com/kuswandanu/dl-ui
