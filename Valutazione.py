@@ -17,9 +17,7 @@ controllo = False
 for percorso in os.listdir():
     elemento = str(percorso)
     if "JSON" in elemento:
-        print("CIAOOOOOO")
         if os.path.exists(elemento):
-            print("SONO DENTRO A PRIMO IF")
             os.chdir(elemento)
             controllo = True
         else:
