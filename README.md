@@ -26,5 +26,5 @@ Progetto tesi
 
 
 
-P.S = Se viene lanciato Aggregazione.py prima di Analisi.py il file non andrà in esecuzione per mancanza di file JSON
+**P.S = Se viene lanciato Aggregazione.py prima di Analisi.py il file non andrà in esecuzione per mancanza di file JSON**
 
