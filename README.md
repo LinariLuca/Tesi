@@ -1,8 +1,10 @@
-README
+**README**
+
 
 Progetto tesi 
 
-REQUISITI
+
+**REQUISITI**
 
 
 
@@ -11,7 +13,8 @@ REQUISITI
 
 -Installare libreria pydriller
 
-ESECUZIONE
+
+**ESECUZIONE**
 
 
 
