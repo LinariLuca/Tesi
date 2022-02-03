@@ -18,11 +18,11 @@ Progetto tesi
 
 
 
--Lanciare Analisi.py che genera tanti file JSON quanti URL sono presenti in test.txt
+-Lanciare Estra1.py che genera tanti file JSON quanti URL sono presenti in test.txt
 
 
 
--Lanciare Aggregazione.py che prende tutti i file JSON creati precedentemente e crea un unico file CSV
+-Lanciare Ispeziona_git.py che prende tutti i file JSON creati precedentemente e crea un unico file CSV
 
 
 
