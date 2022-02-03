@@ -3,7 +3,6 @@
 
 Progetto tesi 
 
-
 **REQUISITI**
 
 
@@ -26,5 +25,5 @@ Progetto tesi
 
 
 
-**P.S = Se viene lanciato Aggregazione.py prima di Analisi.py il file non andrà in esecuzione per mancanza di file JSON**
+**P.S = Se viene lanciato Ispeziona_git.py prima di Estra1.py il file non andrà in esecuzione per mancanza di file JSON**
 
