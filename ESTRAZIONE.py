@@ -61,7 +61,11 @@ def extraction(file_name, folder_name, filtro_name):
 
                     for commit in Repository(URL).traverse_commits():
                         index_progressive = index_progressive + 1
-                        array_time.append(commit.committer_date)
+                        
+                        y = str(commit.committer_date)
+                        cast_dateT = datetime.strptime(y[0:10], '%Y-%m-%d')
+                        array_time.append(cast_dateT)
+                        
                         array_autori.append(commit.author.email)
 
                         for modified_file in commit.modified_files:
@@ -87,11 +91,15 @@ def extraction(file_name, folder_name, filtro_name):
 
                     print()
                     #########
+                    
                     dizionario['project'] = nome_url
                     dizionario['url'] = URL
                     dizionario['number_of_commits'] = NUMERO_COMMIT
-                    dizionario['first-commit-timestamp'] = str(array_time[0])
-                    dizionario['last-commit-timestamp'] = str(array_time[-1])
+                    
+                    #min = perchè voglio il primo timestamp || max = perchè voglio vedere ultimo timestamp
+                    dizionario['first-commit-timestamp'] = str(min(array_time))
+                    dizionario['last-commit-timestamp'] = str(max(array_time))
+                    
                     dizionario['number_of_authors'] = len(list(dict.fromkeys(array_autori)))
                     dizionario['list_of_author_emails'] = list(dict.fromkeys(array_autori))
                     dizionario['number_of_author_selected'] = len(list(dict.fromkeys(array_autori_selected_commit)))
